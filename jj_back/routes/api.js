@@ -12,7 +12,7 @@ var tone_analyzer = watson.tone_analyzer({
 
 /* Text analyze */
 router.get('/', function(req, res, next) {
-  var textToAnalyze = req.body.analyze || 'A word is dead when it is said, some say. Emily Dickinson';
+  var textToAnalyze = req.body.analyze || 'Analyze this mudda bugga!!!!';
 
   tone_analyzer.tone({ text: textToAnalyze },
     function(err, tone) {
