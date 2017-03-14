@@ -1,0 +1,76 @@
+.mainlandingsection {
+    background-image: url("/app/images/soccerfield.jpg");
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mainlandingsectiontext {
+  position: relative;
+  text-align: center;
+  top: 35%;
+  text-transform: uppercase;
+}
+
+.footballdatatitle {
+  font-size: 48px;
+  color: white;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+
+}
+
+.titlesubtext {
+  font-size: 24px;
+  color: white;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  padding-bottom: 30px;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+
+}
+
+.apibutton {
+  font-size: 20px;
+  padding: 15px;
+  margin: 15px;
+  background-color: #c39f04;
+  color: white;
+  border-radius: 8px;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+
+}
+
+.apibutton:hover {
+  text-decoration: none;
+  border: 1px solid black;
+  background: transparent;
+  color: #c39f04;
+}
+
+.mainlandingparagraph {
+  margin: 40px;
+  max-width: 80%;
+  text-align: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+
+.mainlandingparagraph:after {
+  position: absolute;
+    content: '';
+    bottom: 0;
+    left: 50%;
+    width: 100px;
+    margin-left: -50px;
+    height: 2px;
+    background: #FCC72C;
+}
+
+
+div.mainlandingparagraph > .paragraph {
+  text-align: center;
+  color: black;
+}
