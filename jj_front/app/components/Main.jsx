@@ -13,10 +13,10 @@ class Main extends Component {
           <div className="mainlandingsection">
             <div className="mainlandingsectiontext">
               <div className="footballdatatitle">
-                RESTFUL FOOTBALL DATA.
+                Real Acts. Real Feelings. Now.
               </div>
               <div className="titlesubtext">
-                For football applications of your needs.
+                Find Out What's Going On
               </div>
               <a className="apibutton" href="#" role="button">Request an API Key</a>
             </div>

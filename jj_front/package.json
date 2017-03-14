@@ -1,7 +1,7 @@
 {
-  "name": "Football-Data",
-  "version": "1.0.0",
-  "description": "Football/Soccer  API",
+  "name": "CrowdVibe",
+  "version": "0.0.3",
+  "description": "Finding the emotions of live Acts",
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test karma start",
@@ -9,10 +9,9 @@
     "start": "npm run build && node server.js",
     "booty": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
   },
-  "author": "Kollin Brandenburg",
+  "author": "Team Mike Dang(Mike Dang Not Included)",
   "license": "MIT",
   "dependencies": {
-    "autoprefixer": "^6.0.3",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.5.1",
     "babel-loader": "^6.2.2",
