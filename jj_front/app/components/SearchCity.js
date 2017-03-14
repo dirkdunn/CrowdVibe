@@ -13,8 +13,8 @@ class SearchCity extends Component {
           <button className="apibutton">Search For Vibes</button>
         </form>
         </div>
-        )
-      }
-    };
+      )
+    }
+  };
 
         export default SearchCity;

@@ -53,12 +53,8 @@ module.exports = {
     ],
     alias: {
       Main: 'app/components/Main.jsx',
-      About: 'app/components/About.jsx',
       Nav: 'app/components/Nav.jsx',
       Footer: 'app/components/Footer.jsx',
-      Settings: 'app/components/Settings.jsx',
-      Blog: 'app/components/Blog.jsx',
-      Documentation: 'app/components/Documentation.jsx',
       applicationStyles: 'app/styles/app.scss',
 			reducers: 'app/reducers/reducers.jsx',
 			configureStore: 'app/store/configureStore.jsx'
