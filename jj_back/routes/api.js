@@ -40,7 +40,7 @@ router.get('/watson', function(req, res, next) {
 });
 
 router.get('/ticketmaster',function(req,res){
-  
+
   /*
   Locating LAT & LONG
   requestBody._embedded.events (Array, ['_embedded']['venues']['location'])
@@ -53,7 +53,8 @@ router.get('/ticketmaster',function(req,res){
   https://www.npmjs.com/package/request
   */
 
-  var url ="https://app.ticketmaster.com/discovery/v2/events.json?apikey="+process.env.TM_API_KEY+"&city=Austin";
+  var city = req.body.city || 'Austin';
+  var url ="https://app.ticketmaster.com/discovery/v2/events.json?apikey="+process.env.TM_API_KEY+"&city="+city;
   request(url, function (error, response, body) {
     console.log('error:', error); // Print the error if one occurred
     console.log('statusCode:', response && response.statusCode);
