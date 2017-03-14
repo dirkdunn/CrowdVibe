@@ -21,8 +21,6 @@ class Nav extends Component {
           <ul className="" data-dropdown-menu>
               <li className="titlename navbar-left">
                 <Link to="/main" className="eachLink" activeClassName="active">CrowdVibe</Link>
-
-
               </li>
 
             </ul>

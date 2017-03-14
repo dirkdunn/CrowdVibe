@@ -1,3 +1,13 @@
+
+jj_front/build
+jj_front/public/bundle
+jj_front/.DS_Store
+jj_front/.env
+jj_front/npm-debug.log*
+jj_front/yarn-debug.log*
+jj_front/yarn-error.log*
+jj_front/coverage
+
 jj_front/node_modules
 jj_back/node_modules
 jj_back/.env
