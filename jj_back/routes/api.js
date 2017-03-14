@@ -1,9 +1,9 @@
 /*
 TODO:
-  Connect to ticketmaster. Filter using city
+  Connect to ticketmaster. Filter using city (done)
   Connect to twitter API
   Filter tweets via coordinates
-  Run Tweets through Watson to get mood
+  Run Tweets through Watson to get mood ()
 */
 
 // TM standard API url
