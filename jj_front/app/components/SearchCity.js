@@ -4,6 +4,9 @@ import * as Redux from 'react-redux';
 import router from 'app/router/';
 
 class SearchCity extends Component {
+  onFormSubmit(){
+    alert('Hello')
+  }
 
   render() {
     return (
