@@ -68,4 +68,11 @@ router.get('/ticketmaster',function(req,res){
   });
 });
 
+
+// Twitter API & Formulas
+// geocode: “37.781157,-122.398720,1mi”.
+// https://api.twitter.com/1.1/search/tweets.json?q=&geocode=-22.912214,-43.230182,1km&lang=pt&result_type=recent
+// https://github.com/BoyCook/TwitterJSClient
+// "2015-12-21".split('-').slice(0,2).join('-') + '-' + (parseInt("2015-12-21".split('-')[2])+1)
+
 module.exports = router;
