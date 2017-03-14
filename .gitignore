@@ -1,6 +1,6 @@
 
 jj_front/build
-jj_front/public/bundle
+jj_front/public/bundle.js
 jj_front/.DS_Store
 jj_front/.env
 jj_front/npm-debug.log*
