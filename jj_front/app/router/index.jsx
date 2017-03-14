@@ -15,9 +15,6 @@ export default (
     <Route path="/">
 			<Route path="About" component={About}/>
 			<Route path="Main" component={Main}/>
-      <Route path="Blog" component={Blog}/>
-      <Route path="Settings" component={Settings}/>
-      <Route path="Documentation" component={Documentation}/>
 			<IndexRoute component={Main}/>
     </Route>
   </Router>
