@@ -6,8 +6,10 @@ class Results extends Component {
 
   render(){
     return(
-      <div>
-        
+      <div className="results-div">
+        <div className="mood-bar">moodbar</div>
+        <div className="info">info</div>
+
       </div>
     )
   }
