@@ -4,10 +4,6 @@ import {Route, Router, IndexRoute, hashHistory} from 'react-router';
 
 import Main from 'Main';
 import About from 'About';
-import Blog from 'Blog';
-import Settings from 'Settings';
-import Documentation from 'Documentation';
-
 
 
 export default (
