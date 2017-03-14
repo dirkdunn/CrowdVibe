@@ -17,10 +17,10 @@ class Footer extends Component {
 								<a href="#"><i className="icon-youtube"></i></a>
 							</p>
 							<p className="footerwebsite">
-                COPYRIGHT © 2014-2017 <a href="http://football-data.org">FOOTBALL-DATA.ORG</a>.
+                COPYRIGHT © 2017 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Team Mike Dang(Mike Dang Not Included)</a>.
 							</p>
               <p>
-                ALL RIGHTS RESERVED.
+                NOT ALL RIGHTS RESERVED. BUT MOST OF THE RIGHTS RESERVED.
               </p>
 						</div>
 					</div>
