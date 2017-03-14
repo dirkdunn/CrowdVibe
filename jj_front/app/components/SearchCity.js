@@ -7,12 +7,12 @@ class SearchCity extends Component {
 
   render() {
     return (
-      <div className="font">
+      <div className="">
         <form onSubmit={this.onFormSubmit}>
-          <input type="search" ref="location" placeholder="Search for city by name"/>
+          <input className="searchcity center" type="search" ref="location" placeholder="Search for city by name"/>
           <button className="apibutton">Search For Vibes</button>
         </form>
-        </div>
+      </div>
       )
     }
   };
