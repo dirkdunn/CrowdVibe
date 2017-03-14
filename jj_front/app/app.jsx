@@ -4,7 +4,6 @@ var {Provider} = require('react-redux');
 var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 
 var Main = require('Main');
-var About = require('About');
 
 
 var store = require('configureStore').configure();
