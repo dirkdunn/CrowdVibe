@@ -40,14 +40,17 @@ router.get('/watson', function(req, res, next) {
 });
 
 router.get('/ticketmaster',function(req,res){
-  //https://app.ticketmaster.com/discovery/v2/events.json?apikey=o3BJoz7MHeA4gc4KtbnDyaz2yr76GowY&city=Austin
-  // Austin360 Ampitheatre
+  
   /*
+  Locating LAT & LONG
+  requestBody._embedded.events (Array, ['_embedded']['venues']['location'])
 
+  Austin360 Ampitheatre
   "longitude": "-97.64039993",
   "latitude": "30.13310378"
 
-  requestBody._embedded.events (Array, ['_embedded']['venues']['location'])
+  Request DOCS
+  https://www.npmjs.com/package/request
   */
 
   var url ="https://app.ticketmaster.com/discovery/v2/events.json?apikey="+process.env.TM_API_KEY+"&city=Austin";
