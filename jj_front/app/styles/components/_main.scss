@@ -51,7 +51,6 @@
 
 .mainlandingparagraph {
   margin: 40px;
-  max-width: 80%;
   text-align: center;
   align-items: center;
   width: auto;
@@ -73,4 +72,8 @@
 div.mainlandingparagraph > .paragraph {
   text-align: center;
   color: black;
+}
+
+.cardsection{
+  max-width: 90%
 }
