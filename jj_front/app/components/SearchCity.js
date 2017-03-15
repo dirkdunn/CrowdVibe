@@ -7,10 +7,12 @@ import Request from 'superagent';
 
 class SearchCity extends Component {
   onFormSubmit(){
-    var url="http://localhost:3000/api/twitter";
-    Request.get(url).set('Content-Type', 'application/x-www-form-urlencoded').then((response) => {
+    var url="http://localhost:3000/api/ticketmaster/";
+    Request.post(url)
+        .send({'city':'Chicago'})
+        .set('Content-Type', 'application/x-www-form-urlencoded')
+        .then((response) => {
         console.log('Response from Twitter', response.body);
-
       });
   }
 
