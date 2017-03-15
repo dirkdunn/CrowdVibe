@@ -26,6 +26,8 @@ class Main extends Component {
     })
   }
 
+
+
   getDetails(e){
     // ajax request
     console.log('e: ', e);
@@ -61,9 +63,12 @@ class Main extends Component {
         })
         .set('Content-Type', 'application/x-www-form-urlencoded')
         .then((response) => {
-        console.log('Response from Twitter', response);
+        // console.log('Response from Details', response.text);
 
         // Populate the details page
+
+
+        localStorage.setItem('eventDetails', response.text);
         
       });
   }
@@ -78,7 +83,7 @@ class Main extends Component {
         longitude : event.longitude
       });
       return (
-        <Link to="/results"  onClick={this.getDetails.bind(this)}>
+        <Link to="/results"  params={{ test: 'testing123'}} onClick={this.getDetails.bind(this)}>
           <div data-coords={coords} className="col-lg-4 card event" key={index} ref="event">
             <h5 className="title">{event.name}</h5>
             <img src={event.eventImage} alt="event"/>
