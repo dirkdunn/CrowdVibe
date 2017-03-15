@@ -84,6 +84,7 @@ class Results extends Component {
         <div className="topsection">
           <div className="row topsection">
             <div className="col-md-6 mood">
+            <h2>Watson Analysis</h2>
             <ul>
               {moods}
             </ul>
