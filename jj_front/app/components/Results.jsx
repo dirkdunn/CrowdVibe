@@ -49,11 +49,11 @@ class Results extends Component {
     let tweets = this.state.tweets.map((tweet,index)=>{
       console.log('tweets are:',tweet)
       return (
-        <li className="tweetdiv" key={tweet.id_str}>
+        <div className="tweetdiv row" key={tweet.id_str}>
           <img className="profilepic col-lg-2" src={tweet.user.profile_image_url} alt="profile image"/>
           <p className="tweettext col-lg-8">{tweet.text}</p>
           <p className="location col-lg-2">{tweet.place.full_name}</p>
-        </li>
+        </div>
         );
     });
 
