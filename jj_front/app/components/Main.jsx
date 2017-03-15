@@ -59,7 +59,8 @@ class Main extends Component {
           longitude: JSON.parse(this.refs.event.getAttribute('data-coords')).longitude ,
           name: this.refs.event.querySelector('.title').innerText,
           date: this.refs.event.querySelector('.date').innerText ,
-          info: this.refs.event.querySelector('.info').innerText
+          info: this.refs.event.querySelector('.info').innerText,
+          img: this.refs.event.querySelector('.logo').getAttribute('src')
         })
         .set('Content-Type', 'application/x-www-form-urlencoded')
         .then((response) => {
@@ -86,7 +87,7 @@ class Main extends Component {
         <Link to="/results"  params={{ test: 'testing123'}} onClick={this.getDetails.bind(this)}>
           <div data-coords={coords} className="col-lg-4 card event" key={index} ref="event">
             <h5 className="title">{event.name}</h5>
-            <img src={event.eventImage} alt="event"/>
+            <img className="logo" src={event.eventImage} alt="event"/>
             <p className="date">{event.date}</p>
             <p className="info">{event.info}</p>
           </div>
