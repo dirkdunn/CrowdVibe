@@ -2,10 +2,18 @@ import React, {Component} from 'react';
 import {Link} from 'react-router';
 import * as Redux from 'react-redux';
 import router from 'app/router/';
+import Request from 'superagent';
+
 
 class SearchCity extends Component {
   onFormSubmit(){
-    alert('Hello')
+    var url="http://localhost:3000/api/twitter";
+    Request.get(url).set('Content-Type', 'application/x-www-form-urlencoded').then((response) => {
+        console.log('Response from Twitter', response.body);
+        this.setState({
+
+        })
+      });
   }
 
   render() {
