@@ -34,7 +34,7 @@ class Main extends Component {
         longitude : event.longitude
       });
       return (
-        <div  data-coords={coords} className="col-lg-4 card event" key={index}>
+        <div  data-coords={coords} className="col-md-4 card event" key={index}>
           <h3>{event.name}</h3>
           <img src={event.eventImage} alt="event"/>
           <p>{event.info}</p>
@@ -61,7 +61,6 @@ class Main extends Component {
               {events}
             </div>
           </div>
-
 
         <Footer />
       </div>

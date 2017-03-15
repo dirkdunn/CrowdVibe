@@ -45,7 +45,7 @@ class SearchCity extends Component {
     return (
       <div className="">
         <form onSubmit={this.onFormSubmit.bind(this)}>
-          <input className="searchcity center" type="search" ref="location" placeholder="Search for city by name"/>
+          <input className="searchcity center" type="search" ref="location" placeholder="Search For City By Name"/>
           <button className="apibutton">Search For Vibes</button>
         </form>
       </div>
