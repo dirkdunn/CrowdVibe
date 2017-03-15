@@ -49,15 +49,30 @@ class Results extends Component {
 
     let tweets = this.state.tweets.map((tweet,index)=>{
       console.log('tweets are:',tweet)
-      var tweettext= tweet.text
+      var tweettext= tweet.text;
 
-      return (
-        <div className="tweetdiv row" key={tweet.id_str}>
-          <img className="profilepic col-lg-2" src={tweet.user.profile_image_url} alt="profile image"/>
-          <p className="tweettext col-lg-8">{tweet.text}</p>
-          <p className="location col-lg-2">{tweet.place.full_name}</p>
+      if(index < this.state.tweets.length-3){
+        return (
+        <div className="row">
+        <div className="tweetdiv col-md-3 col-md-offset-1" key={this.state.tweets[index].id_str}>
+          <img className="profilepic col-lg-2" src={this.state.tweets[index].user.profile_image_url} alt="profile image"/>
+          <p className="tweettext col-lg-8">{this.state.tweets[index].text}</p>
+          <p className="location col-lg-2">{this.state.tweets[index].place.full_name}</p>
+        </div>
+        <div className="tweetdiv col-md-3 col-md-offset-1" key={this.state.tweets[index+1].id_str}>
+          <img className="profilepic col-lg-2" src={this.state.tweets[index+1].user.profile_image_url} alt="profile image"/>
+          <p className="tweettext col-lg-8">{this.state.tweets[index+1].text}</p>
+          <p className="location col-lg-2">{this.state.tweets[index+1].place.full_name}</p>
+        </div>
+        <div className="tweetdiv col-md-3 col-md-offset-1" key={this.state.tweets[index+2].id_str}>
+          <img className="profilepic col-lg-2" src={this.state.tweets[index+2].user.profile_image_url} alt="profile image"/>
+          <p className="tweettext col-lg-8">{this.state.tweets[index+2].text}</p>
+          <p className="location col-lg-2">{this.state.tweets[index+2].place.full_name}</p>
+        </div>
         </div>
         );
+      }
+
     });
 
     console.log('this.state.tweets, ',this.state.tweets);
@@ -80,14 +95,8 @@ class Results extends Component {
             </div>
           </div>
         </div>
-        <div className="bottomsection">
-          <div className="row bottomsection">
-            <div className="col-md-12 tweets">
-              <ul className="tweets">
-                {tweets}
-              </ul>
-            </div>
-          </div>
+        <div className="bottomsection tweets">
+            {tweets}
         </div>
 
         <Footer/>

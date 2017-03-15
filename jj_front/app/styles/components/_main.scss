@@ -75,12 +75,13 @@ div.mainlandingparagraph > .paragraph {
 }
 
 .cardsection{
-  max-width: 90%
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 .card {
   margin: .5rem;
-  max-width:344px;
+  max-width:330px;
   height: 250px;
   background-color: black;
   color: white;
