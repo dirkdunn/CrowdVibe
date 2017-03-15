@@ -14,7 +14,7 @@ class Results extends Component {
         <div className="mood-bar">moodbar</div>
         <div className="info">info</div>
       </div>
-      <Footer/>
+        <Footer/>
       </div>
     )
   }
