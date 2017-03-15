@@ -2,6 +2,8 @@ import React, { Component} from 'react';
 import router from 'app/router/';
 import Nav from 'Nav';
 import Footer from 'Footer';
+var PolarAreaChart = require("react-chartjs").PolarArea;
+
 
 
 class Results extends Component {
