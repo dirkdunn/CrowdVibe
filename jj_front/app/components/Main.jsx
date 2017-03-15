@@ -28,11 +28,11 @@ class Main extends Component {
 
 
 
-  getDetails(e){
+  getDetails(index){
     // ajax request
-    console.log('e: ', e);
+    console.log('e: ', index);
     // this.refs.event.getAttribute('data-coords')
-    console.log('ref: ', this.refs.event)
+    console.log('ref: ', this.refs['event'+index])
     /*
       var info = {
       latitude : req.body.latitude || '30.134466',
@@ -44,23 +44,25 @@ class Main extends Component {
     */
 
     // Coords
-    console.log( JSON.parse(this.refs.event.getAttribute('data-coords')).latitude );
-    console.log( JSON.parse(this.refs.event.getAttribute('data-coords')).longitude  );
+    console.log( JSON.parse(this.refs['event'+index].getAttribute('data-coords')).latitude );
+    console.log( JSON.parse(this.refs['event'+index].getAttribute('data-coords')).longitude  );
     // name
-    console.log( this.refs.event.querySelector('.title').innerText );
+    console.log( this.refs['event'+index].querySelector('.title').innerText );
     // date
-    console.log(this.refs.event.querySelector('.date').innerText );
-    console.log(this.refs.event.querySelector('.info').innerText);
+    console.log(this.refs['event'+index].querySelector('.date').innerText );
+    console.log(this.refs['event'+index].querySelector('.info').innerText);
+
+    console.log('coords: ', JSON.parse(this.refs['event'+index].getAttribute('data-coords')) )
 
     var url="http://localhost:3000/api/details/";
     Request.post(url)
         .send({
-          latitude: JSON.parse(this.refs.event.getAttribute('data-coords')).latitude,
-          longitude: JSON.parse(this.refs.event.getAttribute('data-coords')).longitude ,
-          name: this.refs.event.querySelector('.title').innerText,
-          date: this.refs.event.querySelector('.date').innerText ,
-          info: this.refs.event.querySelector('.info').innerText,
-          img: this.refs.event.querySelector('.logo').getAttribute('src')
+          latitude: JSON.parse(this.refs['event'+index].getAttribute('data-coords')).latitude,
+          longitude: JSON.parse(this.refs['event'+index].getAttribute('data-coords')).longitude ,
+          name: this.refs['event'+index].querySelector('.title').innerText,
+          date: this.refs['event'+index].querySelector('.date').innerText ,
+          info: this.refs['event'+index].querySelector('.info').innerText,
+          img: this.refs['event'+index].querySelector('.logo').getAttribute('src')
         })
         .set('Content-Type', 'application/x-www-form-urlencoded')
         .then((response) => {
@@ -78,16 +80,18 @@ class Main extends Component {
   render(){
 
     let events = this.state.events.map((event,index)=>{
-      console.log(event.latitude,event.longitude)
+      // console.log(event.latitude,event.longitude)
       // data="{latitude:"+event.latitude+", longitude: "+event.longitude+"}"
       const coords = JSON.stringify({
         latitude : event.latitude,
         longitude : event.longitude
       });
-      return (
-        <Link to="/results" onClick={this.getDetails.bind(this)}>
 
-          <div data-coords={coords} className="col-lg-4 card event" key={index} ref="event">
+
+      return (
+        <Link to="/results" onClick={()=>{ this.getDetails.bind(this)(index) } }>
+
+          <div data-coords={coords} className="col-lg-4 card event" key={index} ref={'event'+index}>
             <h5 className="title">{event.name}</h5>
             <img className="logo" src={event.eventImage} alt="event"/>
             <p className="date">{event.date}</p>

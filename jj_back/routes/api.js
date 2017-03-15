@@ -30,7 +30,7 @@ var tone_analyzer = watson.tone_analyzer({
   version_date: '2016-05-19 '
 });
 
-function getTweets(lattitude,longitude,until,since){
+function getTweets(lattitude,longitude,since, until){
   return new Promise(function(resolve,reject){
     client.get('search/tweets', {
       q:'',
@@ -39,7 +39,7 @@ function getTweets(lattitude,longitude,until,since){
       count:'20',
       geocode: lattitude+','+longitude+',.25mi'
     }, function(error, tweets, response) {
-       console.log(tweets);
+       // console.log(tweets);
        if(error){
         reject(error)
        } else {
@@ -62,7 +62,7 @@ function watsonAnalyze(input_text){
           reject(err);
         }
         else{
-          console.log(JSON.stringify(tone, null, 2));
+          // console.log(JSON.stringify(tone, null, 2));
           resolve(tone);
         }
     });
@@ -75,8 +75,8 @@ function getEvents(body){
     var url ="https://app.ticketmaster.com/discovery/v2/events.json?apikey="+process.env.TM_API_KEY+"&city="+city;
 
     request(url, function (error, response, body) {
-      console.log('error:', error); // Print the error if one occurred
-      console.log('statusCode:', response && response.statusCode);
+      // console.log('error:', error); // Print the error if one occurred
+      // console.log('statusCode:', response && response.statusCode);
 
       if(error){
         reject(error)
@@ -141,22 +141,40 @@ router.get('/twitter',function(req,res){
 
 router.post('/details',function(req,res){
   var info = {
-    lattitude : req.body.coords || '30.134466',
-    longitude : req.body.coords|| '-97.638717',
+    latitude : req.body.latitude || '30.134466',
+    longitude : req.body.longitude || '-97.638717',
     name : req.body.name,
     date: req.body.date || '2017-03-14',
-    location : req.body.location
+    info : req.body.info,
+    img : req.body.img
   };
+
+  var dayAfter = info.date.split('-').slice(0,2).join('-') + '-' + (parseInt(info.date.split('-')[2])+1);
+
+  console.log('info is:ss ', info, dayAfter)
 
   var tweetText = '';
 
-  getTweets(info.lattitude,info.longitude,info.date).then(function(tweets){
+  getTweets(info.latitude,info.longitude,info.date,dayAfter).then(function(tweets){
     tweets.statuses.forEach(function(tweet,index){
       tweetText += tweet.text;
     });
 
+    console.log('tweets: ', tweetText);
+
     watsonAnalyze(tweetText).then(function(response){
-      res.json(response)
+      // Watson data
+      console.log('info is: ', info)
+      var responseObject = {
+        tweets : tweets,
+        emotions : response, 
+        info : info
+      }
+
+      console.log('response object: ', responseObject);
+
+      res.json(responseObject)
+
     }).catch(function(error){
       res.send(error);
     });
