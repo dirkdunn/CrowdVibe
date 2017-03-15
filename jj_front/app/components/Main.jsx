@@ -47,7 +47,7 @@ class Main extends Component {
         <Nav/>
           <div className="mainlandingsection">
             <div className="mainlandingsectiontext">
-              <div className="footballdatatitle">
+              <div className="feelingstitle">
                 Real Acts. Real Feelings. Now.
               </div>
               <div className="titlesubtext">
