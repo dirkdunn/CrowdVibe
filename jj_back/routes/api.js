@@ -30,10 +30,30 @@ var tone_analyzer = watson.tone_analyzer({
   version_date: '2016-05-19 '
 });
 
-function watsonAnalyze(body){
-  console.log('body is: ', body);
+function getTweets(lattitude,longitude,until,since){
   return new Promise(function(resolve,reject){
-    var textToAnalyze = body.analyze || 'Analyze this mudda bugga!!!!';
+    client.get('search/tweets', {
+      q:'',
+      // since: since,
+      until:until,
+      count:'20',
+      geocode: lattitude+','+longitude+',.25mi'
+    }, function(error, tweets, response) {
+       console.log(tweets);
+       if(error){
+        reject(error)
+       } else {
+        resolve(JSON.parse(response.body));
+       }
+    });
+  });
+  
+}
+
+function watsonAnalyze(input_text){
+  // console.log('body is: ', body);
+  return new Promise(function(resolve,reject){
+    var textToAnalyze = input_text || 'Analyze this mudda bugga!!!!';
 
     tone_analyzer.tone({ text: textToAnalyze },
       function(err, tone) {
@@ -110,15 +130,41 @@ router.post('/ticketmaster',function(req,res){
 // until:2015-12-21
 
 router.get('/twitter',function(req,res){
-  client.get('search/tweets', {
-    q:'',
-    // since: '2016-08-04',
-    until:'2017-03-14',
-    geocode:'30.134466,-97.638717,1mi'
-  }, function(error, tweets, response) {
-     console.log(tweets);
-     res.json(response);
-  });
+  //getTweets(lattitude,longitude,until,since){
+    getTweets('30.134466','-97.638717','2017-03-14').then(function(response){
+      res.json(response)
+    }).catch(function(error){
+      res.send(error);
+    })
 });
+
+
+router.post('/details',function(req,res){
+  var info = {
+    lattitude : req.body.coords || '30.134466',
+    longitude : req.body.coords|| '-97.638717',
+    name : req.body.name,
+    date: req.body.date || '2017-03-14',
+    location : req.body.location
+  };
+
+  var tweetText = '';
+
+  getTweets(info.lattitude,info.longitude,info.date).then(function(tweets){
+    tweets.statuses.forEach(function(tweet,index){
+      tweetText += tweet.text;
+    });
+
+    watsonAnalyze(tweetText).then(function(response){
+      res.json(response)
+    }).catch(function(error){
+      res.send(error);
+    });
+    
+  }).catch(function(error){
+    res.send(error);
+  });
+
+})
 
 module.exports = router;
