@@ -50,8 +50,6 @@ class Results extends Component {
     let tweets = this.state.tweets.map((tweet,index)=>{
       console.log('tweets are:',tweet)
       var tweettext= tweet.text
-      console.log('tweettext', tweettext);
-      console.log('aaaaaa', a);
 
       return (
         <div className="tweetdiv row" key={tweet.id_str}>
@@ -68,7 +66,8 @@ class Results extends Component {
     return(
       <div>
         <Nav/>
-          <div className="row">
+        <div className="topsection">
+          <div className="row topsection">
             <div className="col-md-6 mood">
             <ul>
               {moods}
@@ -80,13 +79,17 @@ class Results extends Component {
               <p>{this.state.details.info.info}</p>
             </div>
           </div>
-          <div className="row">
+        </div>
+        <div className="bottomsection">
+          <div className="row bottomsection">
             <div className="col-md-12 tweets">
               <ul className="tweets">
                 {tweets}
               </ul>
             </div>
           </div>
+        </div>
+
         <Footer/>
       </div>
     )
