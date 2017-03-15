@@ -80,12 +80,13 @@ class Main extends Component {
       return (
         <Link to="/results"  onClick={this.getDetails.bind(this)}>
           <div data-coords={coords} className="col-lg-4 card event" key={index} ref="event">
-            <h3 className="title">{event.name}</h3>
+            <h5 className="title">{event.name}</h5>
             <img src={event.eventImage} alt="event"/>
             <p className="date">{event.date}</p>
             <p className="info">{event.info}</p>
           </div>
         </Link>
+
       )
     });
 
@@ -108,7 +109,6 @@ class Main extends Component {
               {events}
             </div>
           </div>
-
 
         <Footer />
       </div>
