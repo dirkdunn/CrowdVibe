@@ -35,9 +35,9 @@ class Main extends Component {
       });
       return (
         <div  data-coords={coords} className="col-md-4 card event" key={index}>
-          <h3>{event.name}</h3>
+          <h5>{event.name}</h5>
           <img src={event.eventImage} alt="event"/>
-          <p>{event.info}</p>
+          {/* <p>{event.info}</p> */}
         </div>
       )
     });
