@@ -4,24 +4,17 @@
   font-weight:900;
   box-shadow: 0 0 3px #262627;
   padding-top: 40px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 125px;
+  width: 100%;
 }
 
 p.footerwebsite a {
   color: #fff;
 }
 p.footerwebsite > a:hover {
-  color:yellow;
+  color: #B58074;
   text-decoration: none;
-}
-
-p.social-icons > i.fa.fa-facebook-official.fa-2x:hover{
-  color: #fff;
-}
-
-p.social-icons > i.fa.fa-twitter.fa-2x:hover{
-  color: #00aced;
-}
-
-p.social-icons > i {
-  padding: 0px 15px;
 }

@@ -71,6 +71,7 @@ class Main extends Component {
 
         localStorage.setItem('eventDetails', response.text);
         
+
       });
   }
 
@@ -84,7 +85,8 @@ class Main extends Component {
         longitude : event.longitude
       });
       return (
-        <Link to="/results"  params={{ test: 'testing123'}} onClick={this.getDetails.bind(this)}>
+        <Link to="/results" onClick={this.getDetails.bind(this)}>
+
           <div data-coords={coords} className="col-lg-4 card event" key={index} ref="event">
             <h5 className="title">{event.name}</h5>
             <img className="logo" src={event.eventImage} alt="event"/>
