@@ -10,10 +10,16 @@ class Results extends Component {
     return(
       <div>
         <Nav/>
-      <div className="results-div">
-        <div className="mood-bar">moodbar</div>
-        <div className="info">info</div>
-      </div>
+          <div className="row">
+            <div className="col-md-6 mood">
+            </div>
+            <div className="col-md-6 info">
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12 tweets">
+            </div>
+          </div>
         <Footer/>
       </div>
     )
