@@ -14,18 +14,18 @@
   text-transform: uppercase;
 }
 
-.footballdatatitle {
+.feelingstitle {
   font-size: 48px;
-  color: white;
-  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  color: black;
+  text-shadow: 1px 0 0 #FFF, 0 -1px 0 #FFF, 0 1px 0 #FFF, -1px 0 0 #FFF;
   font-family: "Avenir Next", "Avenir", sans-serif;
 
 }
 
 .titlesubtext {
   font-size: 24px;
-  color: white;
-  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  color: black;
+  text-shadow: 1px 0 0 #FFF, 0 -1px 0 #FFF, 0 1px 0 #FFF, -1px 0 0 #FFF;
   padding-bottom: 30px;
   font-family: "Avenir Next", "Avenir", sans-serif;
 
@@ -82,4 +82,10 @@ div.mainlandingparagraph > .paragraph {
   margin: .5rem;
   max-width:344px;
   height: 250px;
+}
+
+input.searchcity {
+  max-width: 50%;
+  display: inline-block;
+  border-radius: 2px;
 }

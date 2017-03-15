@@ -14,10 +14,12 @@ class SearchCity extends Component {
     }
   }
 
-  onFormSubmit(){
+  onFormSubmit(cityName){
+    var cityName = this.refs.location.value
+    console.log('city name', cityName);
     var url="http://localhost:3000/api/ticketmaster/";
     Request.post(url)
-        .send({'city':'Chicago'})
+        .send({'city': cityName})
         .set('Content-Type', 'application/x-www-form-urlencoded')
         .then((response) => {
         console.log('Response from Twitter', response);
