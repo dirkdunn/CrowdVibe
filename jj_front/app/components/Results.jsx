@@ -2,7 +2,6 @@ import React, { Component} from 'react';
 import router from 'app/router/';
 import Nav from 'Nav';
 import Footer from 'Footer';
-var PolarAreaChart = require("react-chartjs").PolarArea;
 
 
 
@@ -50,6 +49,10 @@ class Results extends Component {
 
     let tweets = this.state.tweets.map((tweet,index)=>{
       console.log('tweets are:',tweet)
+      var tweettext= tweet.text
+      console.log('tweettext', tweettext);
+      console.log('aaaaaa', a);
+
       return (
         <div className="tweetdiv row" key={tweet.id_str}>
           <img className="profilepic col-lg-2" src={tweet.user.profile_image_url} alt="profile image"/>
