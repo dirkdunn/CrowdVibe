@@ -27,8 +27,12 @@
 .tweetdiv {
   margin-bottom: 15px;
   margin-top: 15px;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
 }
 
 div.col-md-6.info > img {
   max-width: 85%;
 }
+
