@@ -45,7 +45,7 @@ class SearchCity extends Component {
 
   render() {
     return (
-      <div className="">
+      <div className="wrapper">
         <form className="searchForm" onSubmit={this.onFormSubmit.bind(this)}>
           <input className="searchcity center" type="search" ref="location" placeholder="Search For City By Name"/>
             <div onClick={this.onFormSubmit.bind(this)} className="spinningbutton">
