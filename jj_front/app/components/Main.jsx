@@ -64,7 +64,7 @@ class Main extends Component {
         console.log('Response from Twitter', response);
 
         // Populate the details page
-        
+
       });
   }
 
@@ -78,7 +78,7 @@ class Main extends Component {
         longitude : event.longitude
       });
       return (
-        <Link to="/results"  onClick={this.getDetails.bind(this)}>
+        <Link to="/results" onClick={this.getDetails.bind(this)}>
           <div data-coords={coords} className="col-lg-4 card event" key={index} ref="event">
             <h5 className="title">{event.name}</h5>
             <img src={event.eventImage} alt="event"/>

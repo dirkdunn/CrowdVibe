@@ -4,3 +4,52 @@ input.searchcity {
   align-items: center;
   border-radius: 4px;
 }
+
+.searchForm {
+  display:inline;
+}
+
+.spinningbutton {
+  width: 200px;
+  height: 60px;
+  cursor: pointer;
+  perspective: 500px;
+  -webkit-perspective: 500px;
+}
+
+.spinningbutton .buttontext {
+  height: 100%;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: 0.25s;
+  -webkit-transition: 0.25s;
+}
+
+.spinningbutton:hover .buttontext {
+  transform: rotateX(-90deg);
+}
+
+.buttonflip {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  border: 5px solid #fff;
+  line-height: 50px;
+  font-size: 17pt;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.buttonflip:nth-child(1) {
+  color: #fff;
+  transform: translate3d(0, 0, 30px);
+  -webkit-transform: translate3d(0, 0, 30px);
+}
+
+.buttonflip:nth-child(2) {
+  color: black;
+  background: #fff;
+  transform: rotateX(90deg) translate3d(0, 0, 30px);
+  -webkit-transform: rotateX(90deg) translate3d(0, 0, 30px);
+}
