@@ -8,3 +8,11 @@
   justify-content: center;
   text-align: center;
 }
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 125px;
+}

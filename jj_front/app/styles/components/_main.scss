@@ -1,6 +1,6 @@
 .mainlandingsection {
     background-image: url("/app/images/handsbackground.jpg");
-    height: 500px;
+    height: 800px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -82,10 +82,17 @@ div.mainlandingparagraph > .paragraph {
   margin: .5rem;
   max-width:344px;
   height: 250px;
+  background-color: black;
+  color: white;
 }
 
 input.searchcity {
   max-width: 50%;
   display: inline-block;
   border-radius: 2px;
+}
+
+.row {
+  background-color: black;
+  max-width: 110rem
 }
